@@ -1,0 +1,216 @@
+:root {
+  --primary-color: #0b0f1d;
+  --secondary-color: #42ffe0;
+  --tertiary-color: #171e31;
+  --quaternary-color: #121621;
+  --quinary-color: #fff;
+  --senary-color: #65a3fb;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+  background: var(--primary-color);
+  height: 100vh;
+}
+.wrapper .nav {
+  width: 100%;
+  margin: auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+input:focus {
+  outline: none;
+}
+.wrapper .nav .nav--nav {
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 100px;
+  margin: auto;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.wrapper .nav .nav--nav form {
+  display: flex;
+}
+.wrapper .nav .nav--nav form input {
+  width: 250px;
+  height: 20px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: none;
+  align-self: center;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  margin: auto;
+}
+.wrapper .nav .nav--nav header {
+  display: flex;
+}
+.wrapper .nav .nav--nav header .nav__logo {
+  width: 130px;
+  margin: auto;
+}
+.wrapper .nav .nav--nav ul {
+  list-style: none;
+  box-sizing: border-box;
+  background: var(--tertiary-color);
+  color: #ffffff;
+  border-radius: 20px;
+  align-self: center;
+}
+.wrapper .nav .nav--nav ul li {
+  display: flex;
+  margin: 0 5px;
+}
+.wrapper .nav .nav--nav ul a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 22px;
+  align-self: center;
+  padding: 7px;
+}
+.wrapper .main {
+  width: 100%;
+  max-width: 900px;
+  max-height: 850px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  padding: 30px 10px;
+}
+.wrapper .main .main__container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.wrapper .main .left {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.wrapper .main .left .card__date .card__item .card__logo {
+  position: inherit;
+  top: -43px;
+}
+.card__img-container {
+  width: 100%;
+  position: relative;
+  color: var(--quinary-color);
+  display: flex;
+  justify-content: space-between;
+}
+.card__img-container h2 {
+  color: var(--quinary-color);
+  font-size: 30px;
+}
+
+.wrapper .main .right {
+  width: 100%;
+}
+.wrapper .main .right iframe {
+  border-radius: 0 20px 20px 0;
+  height: 500px;
+  width: 100%;
+  border: none;
+}
+.wrapper .main .right .list__item {
+  padding-right: 5px;
+  overflow-y: scroll;
+}
+.card__date {
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+.card__date .card__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 570px;
+  height: 500px;
+  position: relative;
+  border-radius: 20px 0 0 20px;
+  background: var(--quaternary-color);
+}
+.card__date .card__item iframe {
+  margin-bottom: 15px;
+}
+.card__date .card__item .card__text-container h2 {
+  color: #ffffff;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+/* FOOTER */
+.wrapper footer {
+  width: 100%;
+  position: fixed;
+  bottom: 20px;
+  box-sizing: border-box;
+}
+.wrapper footer .footer-box {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  color: var(--quinary-color);
+}
+.wrapper footer .footer-box p a {
+  text-decoration: none;
+  color: var(--senary-color);
+}
+@media (max-width: 479px) {
+  
+  .wrapper .nav .nav--nav {
+    display: block;
+    height: auto;
+  }
+  .wrapper .nav .nav--nav form{
+    margin-top: 15px;
+  }
+  .wrapper .nav .nav--nav ul{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+  .wrapper .main {
+    display: block;
+    padding: 10px;
+  }
+  .wrapper footer .footer-box {
+    font-size: 14px;
+  }
+  .main .main__container .card__date .card__item {
+    border-radius: 20px 20px 0 0;
+    height: 200px;
+  }
+  .main .main__container iframe {
+    border-radius: 0 0 20px 20px !important;
+    height: 400px!important;
+  }
+  .nav .nav--nav header .nav__logo {
+    width: 120px;
+  }
+  .left {
+    width: 100% !important;
+  }
+}
+
