@@ -28,6 +28,19 @@ async function getWeather() {
   });
 }
 
+// obtener ubicacion inicial
+const getLocation = async () => {
+  let urlApi = "https://ipinfo.io?token=849ad9412151af";
+  let response = await axios.get(urlApi)
+    .then((response) => response.data)
+    .catch((error) => { 
+      console.log(error)
+    });
+  console.log(response);
+  return response.city
+};
+getLocation()
+
 function onSubmit(event) {
   event.preventDefault();
   let value = searchBox.value;
@@ -41,7 +54,7 @@ function printMap(res) {
   console.log("printMap");
   let lat = res.data.coord.lat;
   console.log(lat);
-  let lon = res.data.coord.lon;
+  let lon = res.data.coord.lon; 
   console.log(lon);
   let ifrm = document.createElement("iframe");
   ifrm.setAttribute(
