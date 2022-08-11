@@ -28,18 +28,11 @@ async function getWeather() {
   });
 }
 
-// obtener ubicacion inicial
-const getLocation = async () => {
-  let urlApi = "https://ipinfo.io?token=849ad9412151af";
-  let response = await axios.get(urlApi)
-    .then((response) => response.data)
-    .catch((error) => { 
-      console.log(error)
-    });
-  console.log(response);
-  return response.city
-};
-getLocation()
+// document.addEventListener('keypress', function(event){
+// 	if(event.key){
+//     console.log(event.key)
+// 	}
+// });
 
 function onSubmit(event) {
   event.preventDefault();
@@ -54,7 +47,7 @@ function printMap(res) {
   console.log("printMap");
   let lat = res.data.coord.lat;
   console.log(lat);
-  let lon = res.data.coord.lon; 
+  let lon = res.data.coord.lon;
   console.log(lon);
   let ifrm = document.createElement("iframe");
   ifrm.setAttribute(
@@ -85,4 +78,44 @@ function printCard(res) {
 const time = async () => {
   const res = await getWeather();
   printCard(res);
+};
+
+// prueba de mapa
+function mapaTest(x, y) {
+  console.log("Se imprimio el mapa");
+  let ifrm = document.createElement("iframe");
+  ifrm.setAttribute(
+    "src",
+    `https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d62414.9511018945!2d${y}!3d${x}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1658433513389!5m2!1ses-419!2spe`
+  );
+  boxMap.innerHTML = "";
+  boxMap.appendChild(ifrm);
+}
+
+// Inicio de obtener ubicación
+
+const getLocation = async () => {
+  let urlApi = "https://ipinfo.io?token=849ad9412151af";
+  let response = await axios
+    .get(urlApi)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.log(error);
+    });
+  console.log(response);
+  let cor = response.loc.split(",");
+  const x = cor[0];
+  const y = cor[1];
+  console.log(x + " + " + y);
+  mapaTest(x, y);
+};
+
+// Fin de obtener ubicación
+
+window.onload = function () {
+  // alert('hola')
+  if (searchBox.value === "") {
+    getLocation(); //latitud(horizontal) y longitud(vertical)
+  } else {
+  }
 };
