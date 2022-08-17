@@ -109,13 +109,28 @@ const getLocation = async () => {
   console.log(x + " + " + y);
   mapaTest(x, y);
 };
-
 // Fin de obtener ubicación
+
+// Star sweet alert
+function notificacione() {
+  setTimeout(() => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Se detecto tu ubicación",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  }, 2000);
+}
+//En sweet alert
 
 window.onload = function () {
   // alert('hola')
+
   if (searchBox.value === "") {
     getLocation(); //latitud(horizontal) y longitud(vertical)
+    notificacione();
   } else {
   }
 };
