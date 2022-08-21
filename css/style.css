@@ -31,19 +31,40 @@ input:focus {
   padding: 10px;
   box-sizing: border-box;
 }
+.wrapper .nav .nav--nav header {
+  margin: 20px 0;
+}
 .wrapper .nav .nav--nav form {
   display: flex;
 }
-.wrapper .nav .nav--nav form input {
-  width: 250px;
-  height: 20px;
-  padding: 12px 20px;
+.search-form {
+  background: rgb(255, 255, 255);
   border-radius: 10px;
+  position: relative;
+  border: 1px solid rgb(199, 199, 199);
+}
+.search-form i {
+  position: absolute;
+  color: rgb(199, 199, 199);
+  z-index: 1;
+  padding: 12px 18px;
+  font-size: 18px;
+  right: 0;
+  border-radius: 0 10px 10px 0;
+}
+.wrapper .nav .nav--nav form input {
+  width: 100%;
+  height: 20px;
+  padding: 12px 20px 12px 10px;
   border: none;
   align-self: center;
   font-size: 18px;
   background: rgba(255, 255, 255, 0.9);
   margin: auto;
+  border-radius: 10px;
+}
+.wrapper .nav .nav--nav form input::placeholder {
+  color: rgb(199, 199, 199);
 }
 .wrapper .nav .nav--nav header {
   text-align: center;
@@ -85,12 +106,12 @@ input:focus {
   display: flex;
 }
 .wrapper .main .left {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   display: flex;
   flex-direction: column;
-  margin: auto;
   height: 100vh;
-  background: var(--secondary-color);
+  background: var(--quinary-color);
 }
 .wrapper .main .left .card__date .card__item .card__logo {
   position: inherit;
@@ -145,18 +166,20 @@ input:focus {
   transition: 0.5s;
 }
 /* FOOTER */
-.wrapper footer {
-  position: fixed;
+.wrapper .footer {
+  background: red;
   bottom: 20px;
   box-sizing: border-box;
+  display: block;
+  width: 100%;
 }
-.wrapper footer .footer-box {
+.wrapper .footer .footer-box {
   width: 100%;
   margin: auto;
   text-align: center;
   color: var(--tertiary-color);
 }
-.wrapper footer .footer-box p a {
+.wrapper .footer .footer-box p a {
   text-decoration: none;
   color: var(--tertiary-color);
   font-weight: bold;
@@ -194,10 +217,6 @@ input:focus {
     border-radius: 20px 20px 0 0;
     height: 200px;
   }
-  /* .main .main__container iframe {
-    border-radius: 0 0 20px 20px !important;
-    height: 400px !important;
-  } */
   .nav .nav--nav header .nav__logo {
     width: 120px;
   }
