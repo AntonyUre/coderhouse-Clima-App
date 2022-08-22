@@ -16,7 +16,7 @@
 }
 .wrapper .nav {
   width: 100%;
-  padding: 0 10px;
+  /* padding: 0 10px; */
   box-sizing: border-box;
 }
 input:focus {
@@ -28,7 +28,7 @@ input:focus {
   font-weight: bold;
   width: 100%;
   margin: auto;
-  padding: 10px;
+  padding: 20px 0;
   box-sizing: border-box;
 }
 .wrapper .nav .nav--nav header {
@@ -112,9 +112,8 @@ input:focus {
   flex-direction: column;
   height: 100vh;
   background: var(--quinary-color);
-}
-.wrapper .main .left .card__date .card__item .card__logo {
-  position: inherit;
+  padding: 20px;
+  box-sizing: border-box;
 }
 .card__img-container {
   width: 100%;
@@ -126,7 +125,6 @@ input:focus {
   color: var(--tertiary-color);
   font-size: 30px;
 }
-
 .wrapper .main .right {
   width: 100%;
   height: 100%;
@@ -144,7 +142,8 @@ input:focus {
   transition: 0.3s;
   box-sizing: border-box;
 }
-.card__date .card__item {
+/* Card clima start */
+.card__card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,11 +152,53 @@ input:focus {
   width: 100%;
   max-width: 570px;
   position: relative;
+  background: rgb(250, 250, 250);
+  border-radius: 10px;
 }
-.card__date .card__item iframe {
+.card__card--data{
+  margin-top: 45px;
+}
+.card__text-container{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+.card__card--items{
+  background: rgb(241, 241, 241);
+  /* border: 1px solid blue; */
+  padding: 10px 5px;
+  width: 100%;
+  /* height: 50px; */
+  border-radius: 5px;
+}
+.card__card--items img{
+  width:40px;
+  margin: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card__card--items h3{
+  font-size: 14px;
+  font-weight: 100;
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+.card__card--items p{
+  font-size: 14px;
+  text-align: center;
+  /* font-weight: bold; */
+}
+.card__card .card__logo {
+  position: inherit;
+  width: 150px;
+}
+.card__card iframe {
   margin-bottom: 15px;
 }
-.card__date .card__item .card__text-container h2 {
+.card__card .card__text-container h2 {
   color: var(--tertiary-color);
   width: 100%;
   font-size: 16px;
@@ -165,21 +206,22 @@ input:focus {
   letter-spacing: 1px;
   transition: 0.5s;
 }
+
 /* FOOTER */
-.wrapper .footer {
+.footer {
   background: red;
   bottom: 20px;
   box-sizing: border-box;
   display: block;
   width: 100%;
 }
-.wrapper .footer .footer-box {
+.footer .footer-box {
   width: 100%;
   margin: auto;
   text-align: center;
   color: var(--tertiary-color);
 }
-.wrapper .footer .footer-box p a {
+.footer .footer-box p a {
   text-decoration: none;
   color: var(--tertiary-color);
   font-weight: bold;
@@ -213,7 +255,7 @@ input:focus {
   .wrapper footer .footer-box {
     font-size: 14px;
   }
-  .main .main__container .card__date .card__item {
+  .main .main__container .card__date .card__card {
     border-radius: 20px 20px 0 0;
     height: 200px;
   }
